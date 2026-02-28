@@ -13,12 +13,12 @@ connectDB();
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
-  cors: { origin: "*" },
+  cors: { origin: "https://skillswap-frontend-rho.vercel.app" },
 });
 
 chatSocket(io);
 
-app.use(cors());
+app.use(cors({ origin: "https://skillswap-frontend-rho.vercel.app" }));
 app.use(express.json());
 
 // Routes
